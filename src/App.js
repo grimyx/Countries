@@ -1,9 +1,9 @@
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Countries from './components/Countries';
 
 const App = () => {
-  const [countries, setCountries ] = useState([]);
+  const [countries, setCountries] = useState([]);
   const [searchString, setSearchString] = useState("");
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const App = () => {
       .then((response) => {
         setCountries(response.data)
       })
-  },[]);
+  }, []);
 
   const searchHandle = (event) => {
     setSearchString(event.target.value);
@@ -20,8 +20,10 @@ const App = () => {
 
   return (
     <div>
-      <strong>find countries :</strong> <input value={searchString} onChange={searchHandle}/>
-
+      <div class="country-input">
+        <label for="countryInput">Find countries:</label>
+        <input id="countryInput" value={searchString} onChange={searchHandle} />
+      </div>
       <div>
         <Countries countries={countries.filter(c => c.name.toLowerCase().includes(searchString))} />
       </div>

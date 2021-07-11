@@ -1,3 +1,11 @@
+// Component that displays info about selected country
+// Name of the capital city
+// Population
+// Languages
+// Image of the flag
+// and displays weather in capital city
+// As a props takes countrie object taken from api
+
 import Weather from "./Weather"
 
 const Countrie = ({countrie}) => {
