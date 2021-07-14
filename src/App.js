@@ -19,12 +19,11 @@ const App = () => {
 
   }
 
+  // create state for input and on change fn
+  // add 
   return (
     <div>
-     <SearchInput placeholderText="Enter Country" />
-      <div>
-        <Countries countries={countries.filter(c => c.name.toLowerCase().includes(searchString))} />
-      </div>
+    
     </div>
   )
 }
