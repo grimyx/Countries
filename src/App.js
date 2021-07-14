@@ -1,6 +1,7 @@
 import {useState, useEffect } from 'react';
 import axios from 'axios';
 import Countries from './components/Countries';
+import SearchInput from './components/SearchInput';
 
 const App = () => {
   const [countries, setCountries ] = useState([]);
@@ -20,8 +21,7 @@ const App = () => {
 
   return (
     <div>
-      <strong>find countries :</strong> <input value={searchString} onChange={searchHandle}/>
-
+     <SearchInput placeholderText="Enter Country" />
       <div>
         <Countries countries={countries.filter(c => c.name.toLowerCase().includes(searchString))} />
       </div>
