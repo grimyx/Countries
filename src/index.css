@@ -5,9 +5,84 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+box-sizing: border-box;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.countryList {
+  text-align: center;
+}
+
+/*
+.countryList p {
+  margin: 20px 20px;
+  padding: 10px;
+}
+*/
+
+input {
+  display: block;
+  width: 40%;
+  margin: 10% auto;
+  height: 3vw;
+  border-radius: 4px;
+  border-color: cadetblue;
+}
+
+.field {
+  margin: 10px auto;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.field p {
+  width: 80%;
+  background-color: goldenrod;
+  height: 80px;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+input:focus {
+  outline: none;
+}
+
+.country {
+  text-align: center;
+}
+
+.flag-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 60px;
+  padding: 10px;
+  background-color: black ;
+}
+
+.flag-image img {
+  width: 80px;
+}
+
+
+@media screen and (max-width: 900px) {
+  input {
+    width: 80%;
+    margin: 10% 10%;
+    height: 6vw;
+  }
+
+  .field {
+    width: 90%;
+  }
+
+}
+  
+

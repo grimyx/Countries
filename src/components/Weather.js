@@ -5,8 +5,10 @@ const Weather = ({ cityName }) => {
     const [weaterData, setWeatherData] = useState({ temperature: 0, weather_icons: "",wind_speed : 0, wind_dir : ""});
 
     useEffect(() => {
-        axios.get(`http://api.weatherstack.com/current?access_key=${process.env.REACT_APP_WEATHER_SECRET_CODE}&query=${cityName}`)
+        // sredi ovo sa process.env
+        axios.get(`http://api.weatherstack.com/current?access_key=9ba982ef7424062240d3a68064a18bc5&query=${cityName}`)
             .then((res) => {
+                console.log(res)
                 setWeatherData({
                     ...weaterData, temperature: res.data.current.temperature,
                     weather_icons: res.data.current.weather_icons,

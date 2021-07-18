@@ -1,9 +1,9 @@
 // Simple input component to take user input for serch string
 
-const SearchInput = ({placeholderText = ""}) => {
+const SearchInput = ({placeholderText = "", value, onChange}) => {
     return (
         <div>
-            <input placeholder={placeholderText}></input>
+            <input placeholder={placeholderText} value={value} onChange={onChange}></input>
         </div>
     )
 }
