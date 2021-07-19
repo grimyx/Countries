@@ -36,18 +36,18 @@ input {
 
 .field {
   margin: 10px auto;
-  width: 60%;
+  max-width: 80vw;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: goldenrod;
 }
 
 .field p {
   width: 80%;
-  background-color: goldenrod;
-  height: 80px;
+  
   margin-left: 0px;
-  margin-top: 0px;
 }
 input:focus {
   outline: none;

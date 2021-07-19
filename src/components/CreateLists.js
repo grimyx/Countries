@@ -2,8 +2,9 @@
 
 import Countrie from "./Countrie";
 
-const CreateLists = ({ data, transformFn, maxSize }) => {
+const CreateLists = ({ data, transformFn, maxSize , hideInputFn}) => {
     if(data.length === 1) {
+        hideInputFn(false);
         return (
             <Countrie countrie={data[0]} />
         )

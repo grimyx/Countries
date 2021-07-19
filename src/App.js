@@ -1,10 +1,9 @@
 import {useState, useEffect } from 'react';
 import axios from 'axios';
-import Countries from './components/Countries';
 import SearchInput from './components/SearchInput';
 import CreateLists from './components/CreateLists';
 import Field from './components/Field';
-import Countrie from './components/Countrie';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const App = () => {
   const [countries, setCountries ] = useState([]);
@@ -41,7 +40,7 @@ const App = () => {
   return (
     <div>
       {showInput && <SearchInput placeholderText="Enter country name" value={searchString} onChange={searchHandle}/> }
-      <CreateLists data={findCountries(countries, searchString)} transformFn={country => <Field text={country.name} image={country.flag} onClick={() => onFieldClickHandler(country)}/>} maxSize={10}/>
+      <CreateLists data={findCountries(countries, searchString)} transformFn={country => <Field text={country.name} image={country.flag} onClick={() => onFieldClickHandler(country)}/>} maxSize={10} hideInputFn={setShowInput}/>
     </div>
   )
 }
