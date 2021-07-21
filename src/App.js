@@ -1,9 +1,8 @@
 import {useState, useEffect } from 'react';
-import axios from 'axios';
 import SearchInput from './components/SearchInput';
 import CreateLists from './components/CreateLists';
 import Field from './components/Field';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { getCountriesData } from './services/CountriesData';
 
 const App = () => {
   const [countries, setCountries ] = useState([]);
@@ -11,10 +10,10 @@ const App = () => {
   const [showInput, setShowInput] = useState(true);
 
   useEffect(() => {
-    axios.get("https://restcountries.eu/rest/v2/all")
-      .then((response) => {
-        setCountries(response.data)
-      })
+    getCountriesData()
+      .then(res => {
+        setCountries(res);
+      });
   },[]);
 
   const searchHandle = (event) => {
